@@ -54,10 +54,11 @@ class InputValidator{
         let errorBox = document.createElement("div");
         errorBox.classList.add('errors')
         errorBox.innerHTML = this.errors;
+
         document.body.append(errorBox);
 
         if(errorBox.innerHTML){
-            this.$field.style.border = '1px solid red';
+            this.$field.style.border = '.2rem solid #EF3933';
         } 
 
         console.log('InputValidator.showErrors', this.errors);

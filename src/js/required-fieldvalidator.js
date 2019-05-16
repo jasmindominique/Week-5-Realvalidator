@@ -9,6 +9,7 @@ class RequiredFieldValidator extends InputValidator { //with using extends - it'
         
         this.errors= [];
 
+
        if (this.$field.value){
            console.log('valid!')
        } else{

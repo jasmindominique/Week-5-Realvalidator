@@ -63,7 +63,7 @@ function () {
       document.body.append(errorBox);
 
       if (errorBox.innerHTML) {
-        _this2.$field.style.border = '1px solid red';
+        _this2.$field.style.border = '.2rem solid #EF3933';
       }
 
       console.log('InputValidator.showErrors', _this2.errors);

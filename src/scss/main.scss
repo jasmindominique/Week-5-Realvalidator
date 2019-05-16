@@ -24,13 +24,17 @@ TABLE OF CONTENTS:
 }
 
 body {
-	background: #ccc;
+	background: url(https://i.imgur.com/pQz0Mbb.jpg);
 }
 
 
-
-
 /* 2. Content ================================= */
+
+.errors{
+	font-size: 3rem;
+	margin-left: 36%;
+	color:#fff;
+}
 
 .floating-box {
 	position: relative;
@@ -111,6 +115,7 @@ label{
 	margin: 20px;
 
 }
+
 
 
 
