@@ -22,19 +22,28 @@ function (_InputValidator) {
   _inherits(RequiredFieldValidator, _InputValidator);
 
   //with using extends - it's a keyword that facilitates the inheretence. These attributed are being added into the Input Validator 
-  function RequiredFieldValidator(selector) {
+  function RequiredFieldValidator(domElement) {
     var _this;
 
     _classCallCheck(this, RequiredFieldValidator);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(RequiredFieldValidator).call(this, selector)); //can also be known as new toolTip(selector) - not this exact name but something like that.         //says "hey"! we need to run the constructor of the parent class.                                   //.this is a variable accesible to everyone apart of the chain. With using the required field this is looking for the form - each step has the do with the prefious - first the form - then the browser will search for the required fields - input and lastly  extends -                              this is a child of this are 
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(RequiredFieldValidator).call(this, domElement)); //can also be known as new toolTip(selector) - not this exact name but something like that.         //says "hey"! we need to run the constructor of the parent class.                                   //.this is a variable accesible to everyone apart of the chain. With using the required field this is looking for the form - each step has the do with the prefious - first the form - then the browser will search for the required fields - input and lastly  extends -                              this is a child of this are 
 
     _defineProperty(_assertThisInitialized(_this), "validate", function () {
-      //a child class must have a validate function. 
-      console.log('RequiredFieldValidator.validate');
+      console.log('RequiredFieldValidator.validate', _this.$field);
+      _this.errors = [];
+
+      if (_this.$field.value) {
+        console.log('valid!');
+      } else {
+        //if it has no value
+        console.log('invalid'); //add this message to the this.errors array (see InpuValidator)
+
+        _this.errors.push('This field is required.');
+      }
     });
 
-    console.log('RequiredFieldValidator', selector);
+    console.log('RequiredFieldValidator', domElement);
     return _this;
   }
 

@@ -166,4 +166,9 @@ body {
 	padding: 20px;
 }
 
+label {
+	display: block;
+	margin: 20px;
+}
+
 /*# sourceMappingURL=main.css.map */
