@@ -1,12 +1,12 @@
 class InputValidator{
 
-	static init(selector){
+	static init(selector, options){ //this is to allow other files to have their own 
 		console.log('InputValidator.init() - I am a static validator')
 	
-		const $fields = document.querySelectorAll(selector)
+		const $fields = document.querySelectorAll(selector) //creating a const variable to select all the selectors . we are creating it and naming the name $feields
 		$fields.forEach(($field) => {
 
-			/*const instance = */ new this($field) // Creating a new instance using "new" this is a special keyword to point to "it". When the class is called only focus on this specific class when the init method is called it will create a a this keyword for the method that called it. this is used to create our child classes - JS knows to use whichever class that's an entry point
+		/*const instance = */ new this($field, options) // the init method knows that it's the second instance, it understands that we created a new instance of "this" using the options parameter.  Creating a new instance using "new" this is a special keyword to point to "it". When the class is called only focus on this specific class when the init method is called it will create a a this keyword for the method that called it. this is used to create our child classes - JS knows to use whichever class that's an entry point
 		})
 	}
 
@@ -65,14 +65,5 @@ class InputValidator{
        
     }
 }
-
-
-
-
-
-
-
-
-
 
 

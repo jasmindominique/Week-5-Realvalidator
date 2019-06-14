@@ -73,16 +73,10 @@ table {
 }
 
 body {
-	background: url(https://i.imgur.com/pQz0Mbb.jpg);
+	background: #ddd;
 }
 
 /* 2. Content ================================= */
-.errors {
-	font-size: 3rem;
-	margin-left: 36%;
-	color: #fff;
-}
-
 .floating-box {
 	position: relative;
 	font-family: sans-serif;

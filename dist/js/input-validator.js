@@ -13,14 +13,16 @@ var InputValidator =
 function () {
   _createClass(InputValidator, null, [{
     key: "init",
-    value: function init(selector) {
+    value: function init(selector, options) {
       var _this = this;
 
+      //this is to allow other files to have their own 
       console.log('InputValidator.init() - I am a static validator');
-      var $fields = document.querySelectorAll(selector);
+      var $fields = document.querySelectorAll(selector); //
+
       $fields.forEach(function ($field) {
         /*const instance = */
-        new _this($field); // Creating a new instance using "new" this is a special keyword to point to "it". When the class is called only focus on this specific class when the init method is called it will create a a this keyword for the method that called it. this is used to create our child classes - JS knows to use whichever class that's an entry point
+        new _this($field, options); // the init method knows that it's the second instance, it understands that we created a new instance of "this" using the options parameter.  Creating a new instance using "new" this is a special keyword to point to "it". When the class is called only focus on this specific class when the init method is called it will create a a this keyword for the method that called it. this is used to create our child classes - JS knows to use whichever class that's an entry point
       });
     }
   }]);
