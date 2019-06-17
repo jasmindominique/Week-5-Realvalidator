@@ -32,13 +32,29 @@ function (_InputValidator) {
 
     _defineProperty(_assertThisInitialized(_this), "validate", function () {
       _this.errors = [];
-      var numberInput = _this.$field.value; // if (!(numberInput.length == 10 || numberInput.length == 11)) {
-      //     alert("Please enter a valid US phone number.")
+      var ageInput = _this.$field.value; // let lowAge = this.numbersToCheck[0];
+      // let highAge = this.numbersToCheck[this.numbersToCheck.length - 1];
+      // if (!(ageInput.length == 10 || ageInput.length == 11)) {
+      //     alert("Please enter a valid age")
       //     return false
       // 	}
 
-      var firstNumber = _this.numbersToCheck[0];
-      var secondNumber = _this.numbersToCheck[_this.numbersToCheck.length - 1];
+      var numbersError = false;
+      var lowAge = 18; //between - 18 & 35
+
+      var highAge = 35;
+
+      if (ageInput < lowAge) {
+        console.log(ageInput + 'this is too young');
+      } else if (highAge > ageInput) {
+        alert("Sorry, only people over the age of " + lowAge + "may enter this form");
+      } else {
+        numbersError = true;
+      }
+
+      if (numbersError == false) {
+        _this.errors.push('An age between' + 'lowAge' + 'highAge' + 'is required for this form');
+      }
     });
 
     _this.numbersToCheck = numbersToCheck; // remember this variable - keep track of this wherever it is in our class
@@ -48,5 +64,23 @@ function (_InputValidator) {
   }
 
   return RequiredNumberValidator;
-}(InputValidator);
+}(InputValidator); // 	let lowAge = 18; //between - 18 & 35
+// 	let highAge = 35;
+// 	if ((lowAge - highAge) < 0){ //
+// 		alert("Sorry, only people over the age of "+lowAge+"may enter this form")
+// 		return false;
+// 	} 
+// 	return true;
+// 	}
+// }
+// if (lowAge > highAge){
+// 		console.log(ageInput + 'this is valid')
+// 	} else if (lowAge < lowAge.value){
+// 		alert("Sorry, only people over the age of "+lowAge+"may enter this form")
+// 	} else {
+// 		numbersError = true;
+// 	}
+// 		if (numbersError == false){
+// 			this.errors.push ('An age between' + 'lowAge' + 'highAge' + 'is required for this form')
+// 		}
 //# sourceMappingURL=required-number-validator.js.map

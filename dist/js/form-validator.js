@@ -9,6 +9,9 @@ var FormValidator = function FormValidator() {
 
   RequiredFieldValidator.init('[data-required]'); //we're changing how we setup our validation. Static method is used to pass the selector and let static method be the entry point.
 
-  RequiredCharacterValidator.init('[data-validate=characters'); //init is our constructor so that we can apply that logic to everything in the field. 
+  RequiredCharacterValidator.init('[data-required="characters"]', ["@"], ["."], ["!"]); //Computer: once the browser runs the required field validator, it'll then run required character validator, the browser will then look for init in input validator. init is our constructor so that we can apply that logic to everything in the field.
+
+  RequiredEmailValidator.init('[data-validate="email"]');
+  RequiredNumberValidator.init('[data-required="number"]', ['18', '35']);
 };
 //# sourceMappingURL=form-validator.js.map
